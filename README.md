@@ -111,7 +111,7 @@ class Request {
 }
 ```
 
-2. ### 所有的网络请求都放在 redux 里面，数据由redux去管理，redux结合redux/toolkit 一起使用，实际项目中，建议将异步thunk 单独拆封模块
+##      2.   redux + toolkit 
 
 ​       
 
@@ -147,3 +147,51 @@ export default categorySlice.reducer;
 
 ```
 
+##        3. react router v6 文件格式一定要改成tsx 
+
+​       
+
+```typescript
+import NOTFIND from '@/view/404';
+import { lazy } from 'react';
+import { createBrowserRouter, RouteObject, Navigate } from 'react-router-dom';
+
+const MyMusic = lazy(() => import('@/view/myMusic'));
+const MusicHome = lazy(() => import('@/view/musicHome'));
+const routes: RouteObject[] = [
+  {
+    path: '/',
+    element: <Navigate to={'/home'} />,
+  },
+  {
+    path: '/home',
+    element: <MusicHome />,
+  },
+  {
+    path: '/mine',
+    element: <MyMusic />,
+  },
+  {
+    path: '*',
+    element: <NOTFIND />,
+  },
+];
+
+const router = createBrowserRouter(routes);
+export default router;
+
+
+<div>
+	<Suspense fallback={<Spin />}>
+        <RouterProvider router={router}></RouterProvider>
+     </Suspense>
+</div>
+
+// 子路由占位器
+<div>
+    <Outlet />
+</div>
+
+```
+
+​       

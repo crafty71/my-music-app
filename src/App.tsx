@@ -1,6 +1,9 @@
-import { memo, useEffect } from 'react';
+import { memo, Suspense, useEffect } from 'react';
+import { RouterProvider } from 'react-router-dom';
+import router from './router';
 import { useAppDispatch, useAppSelector } from './store/hock';
 import { getCategoryData } from './store/test/async-slice';
+import { Spin } from 'antd';
 
 // eslint-disable-next-line react/display-name
 const App = memo(() => {
@@ -14,7 +17,9 @@ const App = memo(() => {
 
   return (
     <div>
-      <div>{list?.categories?.length}</div>
+      <Suspense fallback={<Spin />}>
+        <RouterProvider router={router}></RouterProvider>
+      </Suspense>
     </div>
   );
 });
