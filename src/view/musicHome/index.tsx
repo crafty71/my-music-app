@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import { Outlet } from 'react-router-dom';
 
-// eslint-disable-next-line react/display-name
 const MusicHome = memo(() => {
   return (
     <div>
@@ -9,5 +8,7 @@ const MusicHome = memo(() => {
     </div>
   );
 });
+
+MusicHome.displayName = 'MusicHome';
 
 export default MusicHome;

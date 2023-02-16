@@ -5,7 +5,6 @@ import { useAppDispatch, useAppSelector } from './store/hock';
 import { getCategoryData } from './store/test/async-slice';
 import { Spin } from 'antd';
 
-// eslint-disable-next-line react/display-name
 const App = memo(() => {
   const dispatch = useAppDispatch();
   const list = useAppSelector((state) => state.category.categories);
@@ -23,5 +22,7 @@ const App = memo(() => {
     </div>
   );
 });
+
+App.displayName = 'App';
 
 export default App;

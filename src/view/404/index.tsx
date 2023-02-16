@@ -1,7 +1,7 @@
 import { Button, Result } from 'antd';
 import { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
-// eslint-disable-next-line react/display-name
+
 const NOTFIND = memo(() => {
   const history = useNavigate();
   const handelToHome = () => {
@@ -18,5 +18,7 @@ const NOTFIND = memo(() => {
     </div>
   );
 });
+
+NOTFIND.displayName = 'NOTFIND';
 
 export default NOTFIND;
