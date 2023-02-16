@@ -3,25 +3,33 @@ import { createBrowserRouter, RouteObject, Navigate } from 'react-router-dom';
 const MyMusic = lazy(() => import('@/view/myMusic'));
 const MusicHome = lazy(() => import('@/view/musicHome'));
 import NOTFIND from '@/view/404';
+// import AppHeader from '@/components/app-header';
 const HomePage = lazy(() => import('@/view/musicHome/home'));
+const AppHeader = lazy(() => import('@/components/app-header'));
 const routes: RouteObject[] = [
   {
     path: '/',
-    element: <Navigate to={'/music-home/home'} />,
+    element: <Navigate to={'/app/music-home/home'} />,
   },
   {
-    path: '/music-home',
-    element: <MusicHome />,
+    path: 'app',
+    element: <AppHeader />,
     children: [
       {
-        path: 'home',
-        element: <HomePage />,
+        path: 'music-home',
+        element: <MusicHome />,
+        children: [
+          {
+            path: 'home',
+            element: <HomePage />,
+          },
+        ],
+      },
+      {
+        path: 'mine',
+        element: <MyMusic />,
       },
     ],
-  },
-  {
-    path: '/mine',
-    element: <MyMusic />,
   },
   {
     path: '*',
