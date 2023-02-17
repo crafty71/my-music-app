@@ -53,29 +53,37 @@ export const footerImages: IHeaderLinks[] = [
 ];
 
 // discover中的数据
-export const dicoverMenu = [
+export const Menu = [
   {
-    title: '推荐',
-    link: '/discover/recommend',
-  },
-  {
-    title: '排行榜',
-    link: '/discover/ranking',
-  },
-  {
-    title: '歌单',
-    link: '/discover/songList',
-  },
-  {
-    title: '主播电台',
-    link: '/discover/radio',
+    title: '首页',
+    link: '/app/music-home/home',
   },
   {
     title: '歌手',
-    link: '/discover/singer',
+    link: '/app/music-home/singer-list',
   },
   {
-    title: '新碟上架',
-    link: '/discover/album',
+    title: '新碟',
+    link: '/app/music-home/album',
+  },
+  {
+    title: '排行榜',
+    link: '/app/music-home/top-list',
+  },
+  {
+    title: '分类歌单',
+    link: '/app/music-home/category',
+  },
+  {
+    title: '电台',
+    link: '/app/music-home/radio',
+  },
+  {
+    title: 'MV',
+    link: '/app/music-home/mv-list',
+  },
+  {
+    title: '数字专辑',
+    link: '/app/music-home/album-mall',
   },
 ];

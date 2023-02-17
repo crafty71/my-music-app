@@ -1,10 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './test/counter-slice';
-import categoryReducer from './test/async-slice';
+
+import categoryReducer from '../view/musicHome/home/store/category-slice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
     category: categoryReducer,
   },
   // middleware: (getDefaultMiddleware) => {
