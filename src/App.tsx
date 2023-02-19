@@ -5,7 +5,7 @@ import { Spin } from 'antd';
 
 const App = memo(() => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div>
       <Suspense fallback={<Spin />}>
         <RouterProvider router={router}></RouterProvider>
       </Suspense>

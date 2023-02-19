@@ -16,9 +16,6 @@ const RecommendSongList = memo(() => {
   const categorySongList = useAppSelector(
     (state) => state.category.categorySong,
   );
-  console.log('====================================');
-  console.log(categorySongList);
-  console.log('====================================');
   useEffect(() => {
     dispatch(getCategoryData());
     dispatch(getCategorySongListData(categoryId));

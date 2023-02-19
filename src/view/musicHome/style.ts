@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const MusicHomeWrapper = styled.div`
+  background: #f9fafb;
   .music-home {
     width: 100%;
     background: #fff;
