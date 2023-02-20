@@ -2,6 +2,7 @@ import { useAppDispatch } from '@/store/hock';
 import { memo, useEffect } from 'react';
 import NewAlbum from './newAlbum';
 import NewSong from './newSong';
+import RankList from './rankList';
 import Recommended from './recommended';
 import RecommendSongList from './recommendSongList';
 import { getRecommendData } from './store/category-slice';
@@ -19,6 +20,7 @@ const HomePage = memo(() => {
         <NewSong />
         <Recommended />
         <NewAlbum />
+        <RankList />
       </div>
     </HomeWrapper>
   );

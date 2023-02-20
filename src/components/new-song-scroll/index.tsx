@@ -5,7 +5,6 @@ import '../scroll-content/index.css';
 import { ScrollerContentWrapper } from './style';
 import { Avatar, Card, Skeleton } from 'antd';
 import Meta from 'antd/es/card/Meta';
-import { getCoverPic } from '@/services/musicHome/category';
 
 interface IProps {
   songList: Songlist[];
@@ -22,10 +21,6 @@ const NewSongScroll = memo((props: IProps) => {
     rows: 4,
   };
 
-  const getPicUrl = async (id: string) => {
-    const res = await getCoverPic(id);
-    return res.data.imageUrl;
-  };
   return (
     <ScrollerContentWrapper>
       <Slider {...settings}>
