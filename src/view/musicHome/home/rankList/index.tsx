@@ -8,7 +8,7 @@ const RankList = memo(() => {
   return (
     <RankListWrapper>
       <h2 className="title">排行榜</h2>
-      <RankListScroll rankList={homeRecommend.toplist} />
+      <RankListScroll rankList={homeRecommend?.toplist} />
     </RankListWrapper>
   );
 });

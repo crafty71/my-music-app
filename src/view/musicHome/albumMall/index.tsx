@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
 const AlbumMall = memo(() => {
-  return <div>AlbumMall</div>;
+  return <div className="marginAuto max-w-6xl">AlbumMall</div>;
 });
 
 AlbumMall.displayName = 'AlbumMall';
